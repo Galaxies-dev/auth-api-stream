@@ -19,6 +19,7 @@ interface User {
 }
 const USERS: User[] = [];
 
+// Create user in Stream Chat
 app.post('/register', async (req, res) => {
   const { email, password } = req.body;
 
@@ -78,6 +79,7 @@ app.post('/register', async (req, res) => {
   }
 });
 
+// Login user
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const user = USERS.find((user) => user.email === email);
